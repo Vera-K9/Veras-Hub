@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vera’s Hub</title>
+  <meta name="description" content="Vera’s Hub – Projekte, Downloads, Infos und Links." />
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0b0f14; color: #e8eef6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
+    header { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
+    .badge {
+      width: 44px; height: 44px; border-radius: 14px;
+      background: linear-gradient(135deg, #ff4fd8, #7a6cff);
+      box-shadow: 0 10px 30px rgba(255,79,216,.15);
+      flex: 0 0 auto;
+    }
+    h1 { font-size: 28px; margin: 0; letter-spacing: .2px; }
+    .sub { margin: 4px 0 0; color: #a9b6c6; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 18px; }
+    .card {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      border-radius: 18px; padding: 16px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.05); }
+    .card h2 { font-size: 16px; margin: 0 0 8px; }
+    .card p { margin: 0 0 12px; color: #a9b6c6; line-height: 1.35; }
+    a.btn {
+      display: inline-block; padding: 9px 12px; border-radius: 12px;
+      text-decoration: none; color: #0b0f14; background: #e8eef6; font-weight: 650;
+    }
+    a.ghost {
+      display: inline-block; padding: 9px 12px; border-radius: 12px;
+      text-decoration: none; color: #e8eef6; border: 1px solid rgba(255,255,255,.14);
+    }
+    footer { margin-top: 26px; color: #7f90a4; font-size: 13px; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge" aria-hidden="true"></div>
+      <div>
+        <h1>Vera’s Hub</h1>
+        <p class="sub">Zentrale für Projekte, Infos und Links. Kurz. Klar. Kein unnötiger Schnickschnack.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Projekte</h2>
+        <p>Aktive Sachen, Demos, WIP und was als Nächstes kommt.</p>
+        <a class="btn" href="projects.html">Öffnen</a>
+      </section>
+
+      <section class="card">
+        <h2>Downloads</h2>
+        <p>Maps, Configs, Ressourcen. Alles an einem Ort, nicht in 12 Discord-Threads.</p>
+        <a class="btn" href="downloads.html">Öffnen</a>
+      </section>
+
+      <section class="card">
+        <h2>Docs / Guides</h2>
+        <p>Kurze Anleitungen, z.B. Create/CRN, Stellwerk-Logik, Setup-Kram.</p>
+        <a class="btn" href="docs.html">Öffnen</a>
+      </section>
+
+      <section class="card">
+        <h2>Über</h2>
+        <p>Wer du bist, was du machst, und was Leute erwarten dürfen.</p>
+        <a class="btn" href="about.html">Öffnen</a>
+      </section>
+    </div>
+
+    <div class="row">
+      <a class="ghost" href="https://github.com/DEINUSERNAME" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="ghost" href="https://youtube.com/@DEINKANAL" target="_blank" rel="noreferrer">YouTube</a>
+      <a class="ghost" href="https://discord.gg/DEININVITE" target="_blank" rel="noreferrer">Discord</a>
+      <a class="ghost" href="mailto:DEINEMAIL@EXAMPLE.COM">Kontakt</a>
+    </div>
+
+    <footer>
+      <p>© <span id="y"></span> Vera. Powered by GitHub Pages.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
