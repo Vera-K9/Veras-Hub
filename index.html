@@ -5,80 +5,171 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vera’s Hub</title>
   <meta name="description" content="Vera’s Hub – Projekte, Downloads, Infos und Links." />
+
   <style>
     :root { color-scheme: dark; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #0b0f14; color: #e8eef6;
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:#0b0f14;
+      color:#e8eef6;
     }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
 
-    header { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
 
-    /* Avatar oben links */
-    .avatar {
-      width: 52px; height: 52px; border-radius: 16px;
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom: 18px;
+    }
+
+    /* Avatar */
+    .avatar{
+      width: 92px;
+      height: 92px;
+      border-radius: 22px;
       object-fit: cover;
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      flex: 0 0 auto;
       background: rgba(255,255,255,.04);
+      flex: 0 0 auto;
     }
 
-    h1 { font-size: 28px; margin: 0; letter-spacing: .2px; }
-    .sub { margin: 4px 0 0; color: #a9b6c6; }
-
-    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 18px; }
-    .card {
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      border-radius: 18px; padding: 16px;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.05); }
-    .card h2 { font-size: 16px; margin: 0 0 8px; }
-    .card p { margin: 0 0 12px; color: #a9b6c6; line-height: 1.35; }
-
-    a.btn {
-      display: inline-block; padding: 9px 12px; border-radius: 12px;
-      text-decoration: none; color: #0b0f14; background: #e8eef6; font-weight: 650;
+    h1{
+      font-size: 28px;
+      margin: 0;
+      letter-spacing: .2px;
     }
 
-    footer { margin-top: 26px; color: #7f90a4; font-size: 13px; }
-
-    /* Icon-Leiste */
-    .icon-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 14px;
-      align-items: center;
-      flex-wrap: wrap;
+    .sub{
+      margin: 6px 0 0;
+      color:#a9b6c6;
     }
-    .icon-link {
-      width: 44px; height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
+
+    /* Social Icons */
+    .icon-row{
+      display:flex;
+      gap:12px;
+      margin-top: 12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .icon-link{
+      width: 56px;
+      height: 56px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.03);
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
-      text-decoration: none;
+      text-decoration:none;
     }
-    .icon-link:hover {
+    .icon-link:hover{
       transform: translateY(-2px);
       border-color: rgba(255,255,255,.22);
       background: rgba(255,255,255,.06);
     }
-    .icon-link img {
-      width: 22px; height: 22px;
-      object-fit: contain;
-      image-rendering: auto;
+    .icon-link img{
+      width: 30px;
+      height: 30px;
+      object-fit: contain; /* niemals quetschen */
       filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
     }
-    .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
-      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+      clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+
+    /* Cards Grid */
+    .grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 18px;
+    }
+
+    .card{
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      border-radius: 18px;
+      padding: 16px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.05);
+    }
+
+    .card-link{
+      display:block;
+      color: inherit;
+      text-decoration:none;
+    }
+
+    .card-inner{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    /* Großes Icon links in der Card */
+    .card-icon{
+      width: 78px;
+      height: 78px;
+      flex: 0 0 78px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .card-icon img{
+      width: 46px;
+      height: 46px;
+      object-fit: contain; /* niemals quetschen */
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
+    }
+
+    .card-text{
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .card-text h2{
+      font-size: 18px;
+      margin: 0 0 6px;
+    }
+    .card-text p{
+      margin: 0;
+      color:#a9b6c6;
+      line-height:1.35;
+    }
+
+    .card-cta{
+      margin-left:auto;
+      padding: 9px 12px;
+      border-radius: 12px;
+      background:#e8eef6;
+      color:#0b0f14;
+      font-weight:650;
+      white-space:nowrap;
+    }
+
+    footer{
+      margin-top: 26px;
+      color:#7f90a4;
+      font-size:13px;
     }
   </style>
 </head>
@@ -86,14 +177,12 @@
 <body>
   <div class="wrap">
     <header>
-      <!-- Profilbild links oben -->
       <img class="avatar" src="avatar.png" alt="Vera Profilbild" />
 
       <div>
         <h1>Vera’s Hub</h1>
         <p class="sub">Zentrale für Projekte, Downloads, Infos und Links.</p>
 
-        <!-- Logos als Links -->
         <div class="icon-row">
           <a class="icon-link" href="https://github.com/Vera-K9" target="_blank" rel="noreferrer" title="GitHub">
             <img src="github.png" alt="" aria-hidden="true" />
@@ -115,27 +204,63 @@
 
     <div class="grid">
       <section class="card">
-        <h2>Projekte</h2>
-        <p>Aktive Sachen, Demos, WIP und was als Nächstes kommt.</p>
-        <a class="btn" href="projects.html">Öffnen</a>
+        <a class="card-link" href="projects.html">
+          <div class="card-inner">
+            <div class="card-icon">
+              <img src="projects.png" alt="" aria-hidden="true">
+            </div>
+            <div class="card-text">
+              <h2>Projekte</h2>
+              <p>Aktive Sachen, Demos, WIP und was als Nächstes kommt.</p>
+            </div>
+            <span class="card-cta">Öffnen</span>
+          </div>
+        </a>
       </section>
 
       <section class="card">
-        <h2>Downloads</h2>
-        <p>Maps, Configs, Ressourcen. Alles an einem Ort, nicht in 12 Discord-Threads.</p>
-        <a class="btn" href="downloads.html">Öffnen</a>
+        <a class="card-link" href="downloads.html">
+          <div class="card-inner">
+            <div class="card-icon">
+              <img src="downloads.png" alt="" aria-hidden="true">
+            </div>
+            <div class="card-text">
+              <h2>Downloads</h2>
+              <p>Maps, Configs, Ressourcen. Alles an einem Ort.</p>
+            </div>
+            <span class="card-cta">Öffnen</span>
+          </div>
+        </a>
       </section>
 
       <section class="card">
-        <h2>Docs / Guides</h2>
-        <p>Kurze Anleitungen, z.B. Create/CRN, Stellwerk-Logik, Setup-Kram.</p>
-        <a class="btn" href="docs.html">Öffnen</a>
+        <a class="card-link" href="docs.html">
+          <div class="card-inner">
+            <div class="card-icon">
+              <img src="docs.png" alt="" aria-hidden="true">
+            </div>
+            <div class="card-text">
+              <h2>Docs / Guides</h2>
+              <p>Kurze Anleitungen: Create/CRN, Stellwerk-Logik, Setup.</p>
+            </div>
+            <span class="card-cta">Öffnen</span>
+          </div>
+        </a>
       </section>
 
       <section class="card">
-        <h2>Über</h2>
-        <p>Wer du bist, was du machst, und was Leute erwarten dürfen.</p>
-        <a class="btn" href="about.html">Öffnen</a>
+        <a class="card-link" href="about.html">
+          <div class="card-inner">
+            <div class="card-icon">
+              <img src="about.png" alt="" aria-hidden="true">
+            </div>
+            <div class="card-text">
+              <h2>Über</h2>
+              <p>Wer du bist, was du machst, und was Leute erwarten dürfen.</p>
+            </div>
+            <span class="card-cta">Öffnen</span>
+          </div>
+        </a>
       </section>
     </div>
 
